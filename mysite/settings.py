@@ -31,7 +31,6 @@ ALLOWED_HOSTS = ['127.0.0.1', 'mymiroslav.pythonanywhere.com']
 # Application definition
 
 INSTALLED_APPS = [
-    'loginza',
     'grappelli',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,15 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',
     'blog',
     'agregate',
 ]
 
-AUTHENTICATION_BACKENDS = (
-    'django.contrib.auth.backends.ModelBackend',
-    'loginza.authentication.LoginzaBackend',
-)
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -61,9 +56,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'mysite.urls'
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.core.context_processors.request',
-)
 
 TEMPLATES = [
     {
@@ -76,7 +68,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.request',
             ],
         },
     },
