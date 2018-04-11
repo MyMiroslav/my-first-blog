@@ -23,7 +23,7 @@ class Post(models.Model):
 		
 class TelegraphArticle(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    title_article = models.CharField(max_length=200)
-    url_page_rus = models.CharField(max_length=300)
-    url_page_ua = models.CharField(max_length=300)
-    url_page_en = models.CharField(max_length=300)
+    title_article = models.CharField(max_length=200,blank=True, null=True)
+    url_page_rus = models.CharField(max_length=300,blank=True, null=True)
+    url_page_ua = models.CharField(max_length=300,blank=True, null=True)
+    url_page_en = models.CharField(max_length=300,blank=True, null=True)
