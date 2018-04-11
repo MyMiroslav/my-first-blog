@@ -1,11 +1,9 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-
-
 <div id="input_tph_article_url" align="center">
 	<form  action="add_and_parse_new_telegraph_article" method="post">	{% csrf_token %}
-	<input id="input_field_tph"/>
-	<input type="submit" value="Внести статью">
+		<input id="field_tph" name="field_tph"/>
+		<input type="submit" value="Внести статью">
 	</form>
 	
 

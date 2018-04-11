@@ -3,12 +3,12 @@ from django.utils import timezone
 
 
 class Post(models.Model):
-    author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    title = models.CharField(max_length=200)
+    author = models.ForeignKey('auth.User', on_delete=models.CASCADE,blank=True, null=True)
+    title = models.CharField(max_length=200,blank=True, null=True)
     image = models.CharField(max_length=200,blank=True, null=True)
     pretext = models.CharField(max_length=500,blank=True, null=True)
     text = models.TextField()
-    telegraph_title = models.ForeignKey('TelegraphArticle',on_delete=models.PROTECT,blank=True, null=True)
+    url_adres_article = models.CharField(max_length=300,blank=True, null=True)
     created_date = models.DateTimeField(
             default=timezone.now)
     published_date = models.DateTimeField(

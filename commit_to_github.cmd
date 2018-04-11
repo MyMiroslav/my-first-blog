@@ -1,3 +1,2 @@
-git status
-git add --all .
+git push
 git commit -m "AutoCommit"
