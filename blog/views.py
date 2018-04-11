@@ -24,4 +24,15 @@ def post_new(request):
             return redirect('post_detail', pk=post.pk)
     else:
         form = PostForm()
-    return render(request, 'blog/post_edit.html', {'form': form})
+    return render(request, 'blog/post_edit.html')
+	
+def new_telegraph_article_form(request):
+    
+    return render(request, 'blog/new_telegraph_article_form.html')
+	
+def add_and_parse_new_telegraph_article(request):
+   #save new article
+   #parse new article
+   #insert article data to post list
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    return render(request, 'blog/post_list.html', {'posts': posts})
