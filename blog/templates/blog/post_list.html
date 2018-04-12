@@ -7,7 +7,7 @@
                     <h1><a href="{{ post.url_adres_article }}"  target="_blank">{{ post.title }}</a></h1>
                     <a href="{{ post.url_adres_article }}"  target="_blank">
 					<img src="{{ post.image }}" class="img-post"> </a>
-                    <p>{{ post.text|linebreaksbr }}</p>
+                    <p>{{ post.pretext|linebreaksbr }}</p>
 					<div class="date">
                         <p>Опубликовано: {{ post.published_date }}</p>
                     </div>
