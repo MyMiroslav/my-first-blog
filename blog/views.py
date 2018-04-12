@@ -35,7 +35,7 @@ def add_and_parse_new_telegraph_article(request):
     url_article=request.POST["field_tph"]
     page_content = GetPageContentOfTelegraph ( url_article )
     image_full_adres = "http://telegra.ph" + str(page_content["img"])
-    insert_into_queryset = Post(title=page_content["h1"],image=image_full_adres,text=page_content["p"],url_adres_article=url_article)
+    insert_into_queryset = Post(title=page_content["h1"],image=image_full_adres,text=page_content["p"],url_adres_article=url_article,published_date = timezone.now())
     insert_into_queryset.save()	
    #parse new article
    #insert article data to post list
